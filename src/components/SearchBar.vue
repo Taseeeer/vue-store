@@ -19,6 +19,14 @@ export default {
       searchValue: "",
     };
   },
+  watch: {
+    searchValue: {
+      handler() {
+        console.log("User is searching");
+      },
+      deep: true,
+    },
+  },
   methods: {
     filterSearchedProducts(search) {
       this.products = this.allProducts.filter((product) => {

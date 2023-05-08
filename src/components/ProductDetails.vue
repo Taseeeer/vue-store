@@ -41,7 +41,6 @@ export default {
   async mounted() {
     const data = await getSingleProduct(this.id);
     this.product = data.data;
-    console.log(this.product);
   },
 };
 </script>

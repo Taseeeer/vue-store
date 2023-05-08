@@ -57,25 +57,26 @@ export default {
     return {
       products: [],
       loading: true,
+      justValue: 10,
     };
   },
   methods: {
     deleteProduct(id) {
-      console.log("calling");
       return (this.products = this.products.filter(
         (product) => product.id !== id
       ));
     },
     getSearchProductsFrom(searchedProducts) {
-      console.log(searchedProducts);
       return (this.products = searchedProducts);
+    },
+    cs() {
+      console.log("hi");
     },
   },
   async mounted() {
     const data = await getAllProducts();
     this.products = data.data;
     this.loading = false;
-    console.log(this.products);
   },
 };
 </script>
